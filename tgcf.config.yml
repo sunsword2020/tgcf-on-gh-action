@@ -14,12 +14,13 @@ forwards:
   - source: tg_cf # username/link/chatid of the source
     dest: [me] # list of chat ids of the destinations
     # me means, the messages will be saved in your Saved Messages in telegram
-    offset: 0 # from where to start (0 means from the first message of source)
+    offset: 111095 # from where to start (0 means from the first message of source)
     # offset will automatically be updated when the program runs
   # - source: -1001
   #   dest: []
   #   offset: 0
   # add more sources if you wish
+  show_forwarded_from: false
 
 past:
   delay: 3 # wait for 3s after forwarding each message
@@ -28,7 +29,9 @@ plugins:
   # specify the plugins you want to use
   filter:
     text:
-      blacklist: ["badword"]
+      whitelist:
+      - audio
+      - document
 
 # read full documentation of plugins here https://git.io/J3NuC
 
